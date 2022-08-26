@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$primary-color: #223F59;
+$bg-color: #F2E6D0;
+
+@layer base{
+      body {
+  font-family: "Montserrat", sans-serif !important;
+  // font-family: 'Lato', sans-serif!important;
+  width: 100vw !important;
+  overflow-x: hidden !important;
+  background-color: $bg-color;
+    color: $primary-color;
+}
+    .bg-color{
+        background-color:$bg-color;
+    }
+    .text-bg-color{
+        color:$bg-color;
+    }
+    .primary-color{
+        color: $primary-color;
+    }
+    .primary-color-bg{
+        background-color: $primary-color;
+    }
+    .border-primary{
+        border-color: $primary-color;
+    }
+    // form field styling
+     .input-container{
+    @apply flex flex-col w-full space-y-1 justify-center items-center;
+  }
+  .input-container > label{
+    @apply uppercase primary-color font-semibold;
+  }
+  .input-container span{
+    @apply text-red-500 tracking-wide text-xs
+  }
+  .input-container .text-type{
+    @apply mt-1 block w-full px-3 py-1 bg-white border border-black rounded-md  placeholder-slate-400
+      focus:outline-none focus:border-primary focus:ring-1 focus:ring-sky-500
+      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200
+}
+  .input-container .submit-type{
+    @apply px-10 py-1 font-bold cursor-pointer primary-color-bg text-bg-color tracking-wider rounded-md text-base hover:bg-white hover:primary-color uppercase;
+  }
+  .input-container .radio-type{
+    @apply flex items-center space-x-2;
+  }
+  .input-container .select-type{
+    @apply px-3 py-2 font-semibold cursor-pointer primary-color-bg text-bg-color tracking-wider rounded-md text-xs hover:text-bg-color hover:primary-color-bg  }
+}
+@layer components{
+    .navbar-section{
+        @apply flex justify-center items-center py-2 primary-color-bg;
+
+        .title{
+            @apply text-bg-color text-sm font-bold uppercase relative;
+            & > span{
+                @apply absolute top-4 -right-10 text-xs font-thin capitalize tracking-tight;
+            }
+        }
+    }
+    .user-info-section{
+        @apply w-4/5 md:w-6/12 mx-auto ;
+
+        form{
+            @apply flex flex-col space-y-2;
+        }
+    }
+    .word-input-form{
+        @apply w-4/5 md:w-6/12 mx-auto my-2 py-1;
+
+        form{
+            @apply flex flex-col space-y-2;
+        }
+    }
+    .word-data-section{
+
+
+        .learner-name{
+            @apply flex flex-col justify-center items-center;
+
+            & > div:nth-child(1){
+                @apply text-xs;
+            }
+            & > div:nth-child(2){
+                @apply text-2xl font-bold uppercase;
+            }
+        }
+        .single-word{
+            @apply flex flex-col justify-center items-center my-2;
+
+            & > div:nth-child(1){
+                @apply text-base font-semibold capitalize;
+            }
+            & > div:nth-child(2){
+                @apply text-xs;
+            }
+        }
+    }
+
+    .learner-data-name-section{
+        @apply flex flex-wrap space-x-2 px-3 my-5;
+    
+        .single-learnername{
+            @apply px-3 py-1 text-bg-color primary-color-bg rounded-md text-xs font-semibold uppercase my-1 cursor-pointer;
+        }
+    }
+}
